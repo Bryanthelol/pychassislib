@@ -1,0 +1,74 @@
+[project]
+name = "pychassislib"
+version = "0.1.0"
+description = "A lightweight Python distributed microservice library"
+authors = [
+    {name = "BryantHe", email = "bryantsisu@qq.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.urls]
+"Homepage" = "https://github.com/Bryanthelol/pychassislib"
+"Source Code" = "https://github.com/Bryanthelol/pychassislib"
+"Bug Tracker" = "https://github.com/Bryanthelol/pychassislib/issues"
+
+[project.optional-dependencies]
+nameko = [
+    "nameko==3.0.0rc11"
+]
+apiflask = [
+    'apiflask>=2.0.0',
+    'gevent>=23.7.0',
+    'gunicorn>=21.2.0'
+]
+ha = [
+    "cachetools==5.3.0",
+    "circuitbreaker==2.0.0",
+    "tenacity==8.2.2",
+]
+ob = [
+    "nameko-sentry==1.0.0",
+    "nameko-tracer==1.4.0",
+]
+log = [
+    "logstash_formatter==0.5.17",
+    "loguru==0.7.2",
+]
+metric = [
+    "nameko-statsd==0.1.4",
+]
+schema = [
+    "marshmallow==3.20.1",
+]
+mysql = [
+    'pymysql>=1.0.3',
+    'sqlalchemy>=2.0.15',
+    'sqlacodegen>=2.3.0',
+    'alembic>=1.11.1'
+]
+mongodb = [
+    'mongoengine==0.27.0'
+]
+security = [
+    "cryptography",
+]
+dev = [
+    "environs==9.5.0",
+    "python-dotenv==1.0.0",
+    "pdm>=2.10.1"
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
