@@ -1,6 +1,6 @@
-def init_statsd(key):
-    from nameko_statsd import StatsD
-    statsd = StatsD(key)
+def init_statsd(prefix=None, host=None, port=8125):
+    from statsd import StatsClient
+    statsd = StatsClient(host, port, prefix=prefix)
     return statsd
 
 
