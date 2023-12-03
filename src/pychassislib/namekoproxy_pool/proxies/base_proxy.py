@@ -2,8 +2,8 @@ from __future__ import absolute_import, unicode_literals
 
 from nameko.standalone.rpc import ClusterRpcClient
 
-from pychassislib.namekoproxy_pool import BadConfigurationError, ClusterNotConfiguredError
-from pychassislib.namekoproxy_pool.connection_pool import ConnectionPool
+from .. import BadConfigurationError, ClusterNotConfiguredError
+from ..connection_pool import ConnectionPool
 
 
 class PooledServiceRpcProxy(object):

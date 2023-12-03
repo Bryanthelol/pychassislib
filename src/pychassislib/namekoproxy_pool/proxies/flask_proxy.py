@@ -1,5 +1,5 @@
 from flask import g
-from pychassislib.namekoproxy_pool.proxies.base_proxy import PooledServiceRpcProxy
+from .base_proxy import PooledServiceRpcProxy
 
 
 class LazyServiceProxy(object):
