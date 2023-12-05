@@ -74,6 +74,7 @@ class ConnectionPool(object):
             self._lock.release()
 
     def _get_connection_from_queue(self, initial_timeout, next_timeout):
+        retry_count = 0
         try:
             return self._queue.get(True, initial_timeout)
         except Empty:
@@ -87,7 +88,12 @@ class ConnectionPool(object):
                 try:
                     return self._queue.get(True, next_timeout)
                 except Empty:
-                    raise ex
+                    if retry_count == 2:
+                        cb = self._make_connection()
+                        return cb
+                    else:
+                        retry_count += 1
+                        raise ex
             except ClientConnectionTimeoutError as e:
                 raise ClientUnavailableError("making connection but timeout")
             finally:
