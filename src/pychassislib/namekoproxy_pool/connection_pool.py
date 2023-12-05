@@ -58,6 +58,7 @@ class ConnectionPool(object):
             raise ClientConnectionTimeoutError()
 
     def _delete_connection(self, connection):
+        connection.stop()
         del connection
         self._current_connections -= 1
 
