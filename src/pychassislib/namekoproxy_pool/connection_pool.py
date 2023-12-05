@@ -57,9 +57,8 @@ class ConnectionPool(object):
         except Exception as e:
             raise ClientConnectionTimeoutError()
 
-    def _delete_connection(self, connection):
-        connection.stop()
-        del connection
+    def _delete_connection(self, _connection):
+        del _connection
         self._current_connections -= 1
 
     def _recycle_connection(self, connection):
