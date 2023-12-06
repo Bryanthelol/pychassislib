@@ -79,7 +79,7 @@ class ConnectionPool(object):
         except Empty:
             try:
                 self._lock.acquire()
-                if self._current_connections == self._max_connections:
+                if self._current_connections >= self._max_connections:
                     raise ClientUnavailableError("Too many connections in use")
                 cb = self._make_connection()
                 return cb
@@ -87,7 +87,7 @@ class ConnectionPool(object):
                 try:
                     return self._queue.get(True, next_timeout)
                 except Empty:
-                    if retry_count == 2:
+                    if retry_count == 3:
                         cb = self._make_connection()
                         return cb
                     else:
