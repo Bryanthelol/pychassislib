@@ -1,6 +1,6 @@
 [project]
 name = "pychassislib"
-version = "0.2.7"
+version = "0.3.0"
 description = "A lightweight Python distributed microservice library"
 authors = [
     {name = "BryantHe", email = "bryantsisu@qq.com"},
@@ -42,7 +42,6 @@ ob = [
     "nameko-tracer==1.4.0",
 ]
 log = [
-    "logstash_formatter==0.5.17",
     "loguru==0.7.2",
 ]
 metric = [
