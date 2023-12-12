@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from pychassislib.chassis.config import Config
-from pychassislib.chassis.consts import const
+from ..chassis.config import Config
+from ..chassis.consts import const
 
 engines = {}
 
