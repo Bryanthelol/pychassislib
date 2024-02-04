@@ -1,6 +1,6 @@
 import datetime
 
-from mongoengine import Document, ObjectIdField, DateTimeField, BooleanField, queryset_manager
+from mongoengine import Document, StringField, DateTimeField, BooleanField, queryset_manager
 
 from .mixin_document import DocumentMixin
 
@@ -9,9 +9,9 @@ class BaseBusinessDocument(Document, DocumentMixin):
     """
     业务数据的基类
     """
-    creator_id = ObjectIdField()
+    creator = StringField()
     create_time = DateTimeField(default=datetime.datetime.utcnow())
-    updator_id = ObjectIdField()
+    updator = StringField()
     update_time = DateTimeField(default=datetime.datetime.utcnow())
     is_deleted = BooleanField()
     delete_time = DateTimeField()
@@ -28,9 +28,9 @@ class BaseBusinessDocument(Document, DocumentMixin):
         """原始"""
         return queryset
 
-    def set_deleted(self, updator_id=None):
+    def set_deleted(self, updator=None):
         self.is_deleted = True
         self.delete_time = datetime.datetime.utcnow()
-        if updator_id:
-            self.updator_id = updator_id
+        if updator:
+            self.updator = updator
         self.save(validate=False)

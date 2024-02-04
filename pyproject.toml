@@ -1,6 +1,6 @@
 [project]
 name = "pychassislib"
-version = "0.4.0"
+version = "0.4.1"
 description = "A lightweight Python distributed microservice library"
 authors = [
     {name = "BryantHe", email = "bryantsisu@qq.com"},
@@ -28,14 +28,14 @@ nameko = [
     "nameko==3.0.0rc11"
 ]
 apiflask = [
-    'apiflask>=2.0.0',
-    'gevent>=23.7.0',
+    'apiflask>=2.1.0',
+    'gevent>=23.9.1',
     'gunicorn>=21.2.0'
 ]
 ha = [
-    "cachetools==5.3.0",
+    "cachetools==5.3.2",
     "circuitbreaker==2.0.0",
-    "tenacity==8.2.2",
+    "tenacity==8.2.3",
 ]
 ob = [
     "nameko-sentry==1.0.0",
@@ -48,7 +48,7 @@ metric = [
     "statsd==4.0.1",
 ]
 schema = [
-    "marshmallow==3.20.1",
+    "marshmallow==3.20.2",
 ]
 mysql = [
     'pymysql>=1.0.3',
@@ -63,7 +63,7 @@ redis = [
     'pottery==3.0.0'
 ]
 security = [
-    "cryptography",
+    "cryptography>=42.0.2",
 ]
 dev = [
     "environs==9.5.0",
