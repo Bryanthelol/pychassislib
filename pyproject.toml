@@ -1,6 +1,6 @@
 [project]
 name = "pychassislib"
-version = "0.4.1"
+version = "0.4.2"
 description = "A lightweight Python distributed microservice library"
 authors = [
     {name = "BryantHe", email = "bryantsisu@qq.com"},
@@ -34,8 +34,8 @@ apiflask = [
 ]
 ha = [
     "cachetools==5.3.2",
-    "circuitbreaker==2.0.0",
-    "tenacity==8.2.3",
+    "circuitbreaker>=2.0.0",
+    "tenacity>=8.2.3",
 ]
 ob = [
     "nameko-sentry==1.0.0",
