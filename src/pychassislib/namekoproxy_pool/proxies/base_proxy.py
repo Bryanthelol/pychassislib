@@ -30,7 +30,7 @@ class PooledServiceRpcProxy(object):
 
     def _get_nameko_connection(self):
         proxy = ClusterRpcClient(
-            timeout=6,
+            timeout=self._config.get('timeout', 10),
             uri=self._config.get('uri')
         )
         return proxy.start()

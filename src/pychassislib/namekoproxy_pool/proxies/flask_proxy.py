@@ -22,6 +22,8 @@ class FlaskPooledServiceRpcProxy(PooledServiceRpcProxy):
         for key, val in app.config.items():
             if key == 'NAMEKO_AMQP_URI':
                 config['uri'] = val
+            elif key == 'NAMEKO_TIMEOUT':
+                config['timeout'] = val
         if isinstance(extra_config, dict):
             config.update(extra_config)
         self.configure(config)
