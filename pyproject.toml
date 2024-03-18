@@ -1,6 +1,6 @@
 [project]
 name = "pychassislib"
-version = "0.4.3"
+version = "0.4.4"
 description = "A lightweight Python distributed microservice library"
 authors = [
     {name = "BryantHe", email = "bryantsisu@qq.com"},
@@ -57,7 +57,7 @@ mysql = [
     'alembic>=1.11.1'
 ]
 mongodb = [
-    'mongoengine==0.27.0'
+    'mongoengine==0.28.2'
 ]
 redis = [
     'pottery==3.0.0'
